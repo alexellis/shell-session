@@ -1,0 +1,31 @@
+name: shell
+
+# Last updated: 2022-10-07 09:52:25.092455305 +0100 BST m=+0.000510577
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - master
+
+permissions:
+  id-token: write
+  contents: read
+  actions: read
+
+jobs:
+  connect:
+    name: connect
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup SSH server for Actor
+        uses: alexellis/setup-sshd-actor@master
+      - name: Connect to the actuated SSH gateway
+        uses: alexellis/actuated-ssh-gateway-action@master
+        with:
+          gatewayaddr: https://actuated-gw.o6s.io
+          secure: true
+      - name: Setup a blocking tmux session
+        uses: alexellis/block-with-tmux-action@master
