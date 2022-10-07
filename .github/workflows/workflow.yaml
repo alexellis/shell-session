@@ -1,6 +1,6 @@
 name: shell
 
-# Last updated: 2022-10-07 09:58:33.785700732 +0100 BST m=+0.000797287
+# Last updated: 2022-10-07 09:59:55.885442077 +0100 BST m=+0.000871679
 
 on:
   pull_request:
@@ -25,7 +25,7 @@ jobs:
       - name: Connect to the actuated SSH gateway
         uses: alexellis/actuated-ssh-gateway-action@master
         with:
-          gatewayaddr: https://actuated-gw.o6s.io
+          gatewayaddr: actuated-gw.o6s.io
           secure: true
       - name: Setup a blocking tmux session
         uses: alexellis/block-with-tmux-action@master
