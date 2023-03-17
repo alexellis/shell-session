@@ -1,6 +1,6 @@
 name: shell
 
-# Last updated: 2023-03-17 16:25:57.04142162 +0000 GMT m=+0.000892740
+# Last updated: 2023-03-17 16:27:02.843545108 +0000 GMT m=+0.000681794
 
 on:
   pull_request:
@@ -18,7 +18,7 @@ permissions:
 jobs:
   connect:
     name: connect
-    runs-on: ubuntu-latest
+    runs-on: actuated
     steps:
       - name: Setup SSH server for Actor
         uses: alexellis/setup-sshd-actor@master
